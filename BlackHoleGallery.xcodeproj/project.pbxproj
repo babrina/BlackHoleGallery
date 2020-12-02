@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9152F08F2577808300D8C5C5 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152F08E2577808300D8C5C5 /* CustomCollectionViewCell.swift */; };
+		9152F09725778C0700D8C5C5 /* astro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9152F094257789A100D8C5C5 /* astro.ttf */; };
 		918A1357255190CB006C1C1A /* AfterOneSecondTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918A1356255190CB006C1C1A /* AfterOneSecondTextField.swift */; };
 		918EBEA4255154DA00B55564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EBEA3255154DA00B55564 /* AppDelegate.swift */; };
 		918EBEA8255154DA00B55564 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EBEA7255154DA00B55564 /* ViewController.swift */; };
@@ -23,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		9152F08E2577808300D8C5C5 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		9152F094257789A100D8C5C5 /* astro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = astro.ttf; sourceTree = "<group>"; };
+		9152F095257789A100D8C5C5 /* FontsFree-Net-COSMO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-COSMO.ttf"; sourceTree = "<group>"; };
 		918A1356255190CB006C1C1A /* AfterOneSecondTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterOneSecondTextField.swift; sourceTree = "<group>"; };
 		918EBEA0255154DA00B55564 /* BlackHoleGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackHoleGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		918EBEA3255154DA00B55564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +60,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		9152F0932577898600D8C5C5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9152F094257789A100D8C5C5 /* astro.ttf */,
+				9152F095257789A100D8C5C5 /* FontsFree-Net-COSMO.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		918EBE97255154DA00B55564 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +88,7 @@
 		918EBEA2255154DA00B55564 /* BlackHoleGallery */ = {
 			isa = PBXGroup;
 			children = (
+				9152F0932577898600D8C5C5 /* Fonts */,
 				9152F08D2577807300D8C5C5 /* Cells */,
 				918EBEA3255154DA00B55564 /* AppDelegate.swift */,
 				918EBEA7255154DA00B55564 /* ViewController.swift */,
@@ -152,6 +165,7 @@
 			files = (
 				918EBEB0255154DB00B55564 /* LaunchScreen.storyboard in Resources */,
 				918EBEAD255154DB00B55564 /* Assets.xcassets in Resources */,
+				9152F09725778C0700D8C5C5 /* astro.ttf in Resources */,
 				918EBEAB255154DA00B55564 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

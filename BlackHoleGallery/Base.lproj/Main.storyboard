@@ -8,6 +8,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="astro.ttf">
+            <string>Astro</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,15 +22,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6y6p32tRRRtjoiVbKf2HNJ" translatesAutoresizingMaskIntoConstraints="NO" id="m4K-c2-hgM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVw-vr-ynV">
                                 <rect key="frame" x="0.0" y="596" width="414" height="300"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPX-aU-yPO">
                                         <rect key="frame" x="30" y="81" width="354" height="50"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8dY-Ym-G52"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="22"/>
                                         <state key="normal" title="login">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -35,10 +44,11 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8Z-hg-cog">
                                         <rect key="frame" x="30" y="166" width="354" height="50"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ocu-Tj-Cnf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="22"/>
                                         <state key="normal" title="create">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -47,7 +57,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="M8Z-hg-cog" firstAttribute="centerX" secondItem="eVw-vr-ynV" secondAttribute="centerX" id="5e8-cI-5BK"/>
                                     <constraint firstItem="M8Z-hg-cog" firstAttribute="top" secondItem="kPX-aU-yPO" secondAttribute="bottom" constant="35" id="Lhh-N2-fcW"/>
@@ -64,9 +73,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="m4K-c2-hgM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3HP-6q-0ra"/>
+                            <constraint firstItem="m4K-c2-hgM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5MW-y9-ISj"/>
+                            <constraint firstAttribute="bottom" secondItem="m4K-c2-hgM" secondAttribute="bottom" id="Gs4-Bb-BdC"/>
+                            <constraint firstItem="m4K-c2-hgM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JlT-bk-krd"/>
                             <constraint firstItem="eVw-vr-ynV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L60-c7-TgV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m4K-c2-hgM" secondAttribute="trailing" id="MIX-GT-jz3"/>
                             <constraint firstItem="eVw-vr-ynV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="O0r-4g-k0C"/>
                             <constraint firstAttribute="bottom" secondItem="eVw-vr-ynV" secondAttribute="bottom" id="wZd-z2-QaO"/>
+                            <constraint firstItem="m4K-c2-hgM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="whI-CR-x2M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="clR-KN-GFT"/>
@@ -363,6 +378,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="6y6p32tRRRtjoiVbKf2HNJ" width="1080" height="1920"/>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="liked" width="170.66667175292969" height="170.66667175292969"/>

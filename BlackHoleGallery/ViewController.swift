@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.cornerRadius()
+        createButton.cornerRadius()
+        
         loadDefaults()
     }
     
