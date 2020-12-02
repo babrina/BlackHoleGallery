@@ -8,7 +8,10 @@ class MainViewController: UIViewController {
     var galleryImagesArray: [Picture] = []
     
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadDefaults()
+    }
     
     
     
@@ -37,6 +40,12 @@ class MainViewController: UIViewController {
     
     
     
+    
+    func loadDefaults() {
+        if let galleryImagesArray = UserDefaults.standard.value([Picture].self, forKey: "saved") {
+            self.galleryImagesArray = galleryImagesArray
+        }
+    }
     
     
     private func performImagePicker() {

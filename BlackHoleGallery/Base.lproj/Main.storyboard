@@ -204,8 +204,11 @@
                                                 <rect key="frame" x="0.0" y="33" width="414" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbH-sj-rJV">
-                                                        <rect key="frame" x="30" y="5" width="34" height="30"/>
-                                                        <state key="normal" title="Back"/>
+                                                        <rect key="frame" x="30" y="2" width="72" height="36"/>
+                                                        <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="17"/>
+                                                        <state key="normal" title="Back">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="backButtonPressed:" destination="mBE-Zg-LZU" eventType="touchUpInside" id="akG-Rc-r2a"/>
                                                         </connections>
@@ -221,7 +224,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-VY-pf0">
                                                 <rect key="frame" x="0.0" y="73" width="414" height="723"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cll-dB-Ul1">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cll-dB-Ul1">
                                                         <rect key="frame" x="30" y="0.0" width="354" height="603"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="603" id="uyo-ef-t0P"/>
@@ -287,6 +290,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="EpF-bh-nM5"/>
                                                             <constraint firstAttribute="width" constant="50" id="RNT-IV-pUa"/>
                                                         </constraints>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="arrow.forward" catalog="system"/>
                                                         <connections>
                                                             <action selector="rightButtonPressed:" destination="mBE-Zg-LZU" eventType="touchUpInside" id="yok-2H-gvJ"/>
@@ -298,6 +302,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="8j5-wl-4gS"/>
                                                             <constraint firstAttribute="width" constant="50" id="rkw-8E-iYP"/>
                                                         </constraints>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="arrow.backward" catalog="system"/>
                                                         <connections>
                                                             <action selector="leftButtonPressed:" destination="mBE-Zg-LZU" eventType="touchUpInside" id="htu-yk-qjF"/>
