@@ -25,7 +25,6 @@
 /* Begin PBXFileReference section */
 		9152F08E2577808300D8C5C5 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		9152F094257789A100D8C5C5 /* astro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = astro.ttf; sourceTree = "<group>"; };
-		9152F095257789A100D8C5C5 /* FontsFree-Net-COSMO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-COSMO.ttf"; sourceTree = "<group>"; };
 		918A1356255190CB006C1C1A /* AfterOneSecondTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterOneSecondTextField.swift; sourceTree = "<group>"; };
 		918EBEA0255154DA00B55564 /* BlackHoleGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackHoleGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		918EBEA3255154DA00B55564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				9152F094257789A100D8C5C5 /* astro.ttf */,
-				9152F095257789A100D8C5C5 /* FontsFree-Net-COSMO.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -342,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AndreyZamiralov.BlackHoleGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -361,7 +359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AndreyZamiralov.BlackHoleGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
