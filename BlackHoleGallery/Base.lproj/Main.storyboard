@@ -57,17 +57,33 @@
                                             <action selector="createNewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iaY-rC-FXJ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72T-0v-lPU">
+                                        <rect key="frame" x="329" y="83.5" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="8DE-4z-qKH"/>
+                                            <constraint firstAttribute="width" constant="45" id="rVV-0I-Emt"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="faceid" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="useBiometricsWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQ5-Rc-3AS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="M8Z-hg-cog" firstAttribute="centerX" secondItem="eVw-vr-ynV" secondAttribute="centerX" id="5e8-cI-5BK"/>
                                     <constraint firstItem="M8Z-hg-cog" firstAttribute="top" secondItem="kPX-aU-yPO" secondAttribute="bottom" constant="35" id="Lhh-N2-fcW"/>
                                     <constraint firstItem="M8Z-hg-cog" firstAttribute="leading" secondItem="eVw-vr-ynV" secondAttribute="leading" constant="30" id="O8W-0u-gGC"/>
+                                    <constraint firstItem="72T-0v-lPU" firstAttribute="centerY" secondItem="kPX-aU-yPO" secondAttribute="centerY" id="T8j-Wp-rmk"/>
                                     <constraint firstAttribute="trailing" secondItem="kPX-aU-yPO" secondAttribute="trailing" constant="30" id="baz-p8-Pi6"/>
                                     <constraint firstAttribute="trailing" secondItem="M8Z-hg-cog" secondAttribute="trailing" constant="30" id="dD7-TZ-gDi"/>
                                     <constraint firstAttribute="bottom" secondItem="M8Z-hg-cog" secondAttribute="bottom" constant="84" id="gnx-Yn-fF6"/>
                                     <constraint firstAttribute="height" constant="300" id="rla-dW-5cS"/>
                                     <constraint firstItem="kPX-aU-yPO" firstAttribute="leading" secondItem="eVw-vr-ynV" secondAttribute="leading" constant="30" id="wPK-Kq-uVv"/>
                                     <constraint firstItem="kPX-aU-yPO" firstAttribute="centerX" secondItem="eVw-vr-ynV" secondAttribute="centerX" id="xU6-BM-FfM"/>
+                                    <constraint firstAttribute="trailing" secondItem="72T-0v-lPU" secondAttribute="trailing" constant="40" id="zGI-C0-9TA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -89,6 +105,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="m4K-c2-hgM" id="xzs-tN-6lm"/>
                         <outlet property="createButton" destination="M8Z-hg-cog" id="1jH-M6-nXv"/>
+                        <outlet property="faceIDButton" destination="72T-0v-lPU" id="ncW-8F-B7W"/>
                         <outlet property="loginButton" destination="kPX-aU-yPO" id="ujC-t9-Li0"/>
                         <outlet property="loginButtonBottomConstraint" destination="Lhh-N2-fcW" id="BXk-tx-ub8"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="CK4-sK-l43"/>
@@ -157,6 +174,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Uwy-D7-Ebm" secondAttribute="bottom" constant="5" id="IyF-vx-sja"/>
+                                    <constraint firstItem="Uwy-D7-Ebm" firstAttribute="top" secondItem="g4H-fh-w2b" secondAttribute="top" constant="35.5" id="VmM-ye-Lfp"/>
                                     <constraint firstItem="Uwy-D7-Ebm" firstAttribute="leading" secondItem="g4H-fh-w2b" secondAttribute="leading" constant="10" id="eK3-Z8-LxN"/>
                                     <constraint firstAttribute="height" constant="80" id="qj5-Iw-2E6"/>
                                 </constraints>
@@ -253,7 +271,6 @@
                             <constraint firstItem="g4H-fh-w2b" firstAttribute="top" secondItem="V1E-Ee-oAW" secondAttribute="top" id="e5e-Zo-VdW"/>
                             <constraint firstItem="Fgl-2v-fHc" firstAttribute="top" secondItem="g4H-fh-w2b" secondAttribute="bottom" id="fql-YJ-puH"/>
                             <constraint firstItem="Fgl-2v-fHc" firstAttribute="leading" secondItem="5hA-4f-Dsn" secondAttribute="leading" id="ldR-46-En4"/>
-                            <constraint firstItem="5hA-4f-Dsn" firstAttribute="bottom" secondItem="Fgl-2v-fHc" secondAttribute="bottom" constant="44" id="tyF-OZ-JcA"/>
                         </constraints>
                     </view>
                     <connections>
@@ -608,6 +625,7 @@
     <resources>
         <image name="6y6p32tRRRtjoiVbKf2HNJ" width="1080" height="1920"/>
         <image name="camera.on.rectangle.fill" catalog="system" width="128" height="96"/>
+        <image name="faceid" catalog="system" width="128" height="115"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="liked" width="170.66667175292969" height="170.66667175292969"/>
         <image name="notliked" width="170.66667175292969" height="170.66667175292969"/>

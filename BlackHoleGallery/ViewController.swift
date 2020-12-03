@@ -1,4 +1,6 @@
 import UIKit
+import LocalAuthentication
+
 
 class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
@@ -6,6 +8,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet var mainView: UIView!
+    @IBOutlet weak var faceIDButton: UIButton!
     
     
     var userPincode = ""
@@ -13,8 +16,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        changeIcons()
         loginButton.isHidden = true
         mainView.addParalaxEffect()
+        faceIDButton.isHidden = true
         
         loginButton.cornerRadius()
         createButton.cornerRadius()
@@ -28,14 +33,29 @@ class ViewController: UIViewController {
     
     
     
-    
+    @IBAction func useBiometrics(sender: UIButton) {
+        let context = LAContext()
+        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {return}
+        
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Please authenticate to proceed.") { (success, error) in
+                if success {
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(controller, animated: true)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                } else {
+                    guard let error = error else { return }
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         showInputDialog(title: "Enter your password", subtitle: "Password contains at least 6 symbols", actionTitle: "Enter", cancelTitle: "Cancel", inputPlaceholder: "Your number password", inputKeyboardType: .numberPad, cancelHandler: nil) { (input:String?) in
-            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {
-                return
-            }
+            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {return}
             if input == self.userPincode {
                 self.navigationController?.pushViewController(controller, animated: true)
             } else {
@@ -53,6 +73,7 @@ class ViewController: UIViewController {
                 
                 UIView.animate(withDuration: 0.3) {
                     self.loginButton.isHidden = false
+                    self.faceIDButton.isHidden = false
                     self.createButton.isHidden = true
                     self.loginButtonBottomConstraint.constant = 0
                 }
@@ -62,10 +83,27 @@ class ViewController: UIViewController {
         }
     }
     
+    func changeIcons() {
+        if !faceIDAvailable() {
+            faceIDButton.setImage(UIImage(systemName: "touchid"), for: .normal)
+        }
+    }
+    
+    
+    func faceIDAvailable() -> Bool {
+        if #available(iOS 11.0, *) {
+            let context = LAContext()
+            return (context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: nil) && context.biometryType == .faceID)
+        }
+        return false
+    }
+    
+    
     func loadDefaults() {
         guard let password = UserDefaults.standard.object(forKey: "pincode") as? String else {return}
         self.userPincode = password
         loginButton.isHidden = false
+        faceIDButton.isHidden = false
         createButton.isHidden = true
         self.loginButtonBottomConstraint.constant = 0
     }
