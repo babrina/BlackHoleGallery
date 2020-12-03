@@ -1,8 +1,9 @@
 import UIKit
 
 class MainViewController: UIViewController {
- 
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var menuView: UIView!
     
     
     var galleryImagesArray: [Picture] = []
@@ -10,12 +11,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        menuView.cornerRadius()
         loadDefaults()
     }
-    
-    
-    
-    
     
     
     @IBAction func plusButtonPressed(_ sender: UIButton) {
@@ -23,22 +21,12 @@ class MainViewController: UIViewController {
         self.performImagePicker()
     }
     
-    
-    
-    
     @IBAction func galleryButton(_ sender: UIButton) {
         
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "GalleryViewController") as? GalleryViewController else {return}
         
-            self.navigationController?.pushViewController(controller, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
-    
-    
-    
-    
-    
-    
-    
     
     
     func loadDefaults() {
@@ -47,7 +35,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    
+  
     private func performImagePicker() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self

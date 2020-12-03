@@ -6,6 +6,7 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var commentTextView: UITextField!
     @IBOutlet weak var likeImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var bottomMenu: UIView!
     
     //MARK: - VAR
     var photoAlbum: [Picture] = []
@@ -15,6 +16,9 @@ class GalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bottomMenu.cornerRadius()
+        imageView.cornerRadius()
+        bottomMenu.dropShadow()
         // Load photoalbum custom class
         self.loadPhotoAlbum()
         
@@ -36,6 +40,8 @@ class GalleryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupPicture()
+        imageView.dropShadow()
+
     }
     
     
