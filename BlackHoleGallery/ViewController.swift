@@ -4,6 +4,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     
     var userPincode = ""
@@ -12,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.isHidden = true
+        backgroundImageView.addParalaxEffect()
+        
         loginButton.cornerRadius()
         createButton.cornerRadius()
         
@@ -145,3 +148,16 @@ extension UIViewController {
 }
 
 
+extension UIView {
+    func addParalaxEffect(amount: Int = 20) {
+        let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        horizontal.minimumRelativeValue = -amount
+        horizontal.maximumRelativeValue = amount
+        let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        vertical.minimumRelativeValue = -amount
+        vertical.maximumRelativeValue = amount
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [horizontal, vertical]
+        addMotionEffect(group)
+    }
+}

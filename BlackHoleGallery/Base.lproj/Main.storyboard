@@ -87,6 +87,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="clR-KN-GFT"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="m4K-c2-hgM" id="xzs-tN-6lm"/>
                         <outlet property="createButton" destination="M8Z-hg-cog" id="1jH-M6-nXv"/>
                         <outlet property="loginButton" destination="kPX-aU-yPO" id="ujC-t9-Li0"/>
                         <outlet property="loginButtonBottomConstraint" destination="Lhh-N2-fcW" id="BXk-tx-ub8"/>

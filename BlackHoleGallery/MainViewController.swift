@@ -35,34 +35,23 @@ class MainViewController: UIViewController {
         }
     }
     
-  
+    
     private func performImagePicker() {
-            
-            self.alertThreeButton(title: "Strong Box vorrebbe accedere alle tue foto", message: "We need this so that you can share photos and videos from your photo library.", titleActionOne: "Camera", titleActionTwo: "Photo library", titleCancelAction: "Cancel", style: .actionSheet) { (_) in
-                self.imagePicker.sourceType = .camera
-                self.present(self.imagePicker, animated: true, completion: nil)
-                print("Camera selected")
-            } handlerActionTwo: { (_) in
-                self.imagePicker.modalPresentationStyle = .overFullScreen
-                self.imagePicker.allowsEditing = true
-                self.imagePicker.sourceType = .photoLibrary
-                self.present(self.imagePicker, animated: true, completion: nil)
-                print("Photo selected")
-            } handlerCancel: { (_) in
-                self.dismiss(animated: true, completion: nil)
-            }
+        
+        self.alertThreeButton(title: "Add photos to secured storage", message: "You can add bank cards, secret photos", titleActionOne: "Camera", titleActionTwo: "Photo library", titleCancelAction: "Cancel", style: .actionSheet) { (_) in
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true, completion: nil)
+            print("Camera selected")
+        } handlerActionTwo: { (_) in
+            self.imagePicker.modalPresentationStyle = .overFullScreen
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+            print("Photo selected")
+        } handlerCancel: { (_) in
+            self.dismiss(animated: true, completion: nil)
         }
-    
-//    private func performImagePicker() {
-//        let imagePicker = UIImagePickerController()
-//        imagePicker.delegate = self
-//        imagePicker.modalPresentationStyle = .overFullScreen
-//        imagePicker.allowsEditing = true
-//        imagePicker.sourceType = .photoLibrary
-//
-//        present(imagePicker, animated: true, completion: nil)
-//    }
-    
+    }
 }
 
 
