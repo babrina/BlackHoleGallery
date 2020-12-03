@@ -64,8 +64,8 @@
                                             <constraint firstAttribute="width" constant="45" id="rVV-0I-Emt"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="faceid" catalog="system" symbolScale="large"/>
+                                        <state key="normal" image="faceid" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
                                         </state>
                                         <connections>
                                             <action selector="useBiometricsWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQ5-Rc-3AS"/>
@@ -187,9 +187,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oV3-i4-tki">
                                                 <rect key="frame" x="51" y="11.5" width="29.5" height="24.5"/>
-                                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal">
-                                                    <imageReference key="image" image="house" catalog="system" symbolScale="large"/>
+                                                    <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
                                                 </state>
                                             </button>
                                         </subviews>
@@ -338,7 +338,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="HwA-0v-8SX"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="mBE-Zg-LZU" id="33w-yD-Eu3"/>
@@ -509,7 +509,7 @@
                                                 <rect key="frame" x="51" y="11.5" width="29.5" height="24.5"/>
                                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                 <state key="normal">
-                                                    <imageReference key="image" image="house" catalog="system" symbolScale="large"/>
+                                                    <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="backButtonPressed:" destination="mBE-Zg-LZU" eventType="touchUpInside" id="SD7-9B-rlE"/>
@@ -539,13 +539,18 @@
                                             <constraint firstItem="jCL-hC-1eT" firstAttribute="centerY" secondItem="U5a-h9-kQ4" secondAttribute="centerY" id="RMp-x5-v6R"/>
                                             <constraint firstItem="jCL-hC-1eT" firstAttribute="centerX" secondItem="U5a-h9-kQ4" secondAttribute="centerX" id="oOV-4f-KZc"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="jCL-hC-1eT"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tse-Tg-hkS">
                                         <rect key="frame" x="262.5" y="0.0" width="131.5" height="47"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDi-Yb-Gol">
                                                 <rect key="frame" x="50" y="11.5" width="31.5" height="24"/>
-                                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal">
                                                     <imageReference key="image" image="photo.on.rectangle.fill" catalog="system" symbolScale="large"/>
                                                 </state>
@@ -627,11 +632,15 @@
         <image name="camera.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <image name="faceid" catalog="system" width="128" height="115"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="liked" width="170.66667175292969" height="170.66667175292969"/>
         <image name="notliked" width="170.66667175292969" height="170.66667175292969"/>
         <image name="photo.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

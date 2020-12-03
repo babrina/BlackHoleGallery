@@ -138,7 +138,7 @@ class GalleryViewController: UIViewController {
             print("Keyboard dismissed")
             viewButtomConstraint.constant = 0
         } else {
-            viewButtomConstraint.constant = keyboardScreenEndFrame.height
+            viewButtomConstraint.constant = keyboardScreenEndFrame.height - 100
             print("Keyboard shown")
             
         }
