@@ -120,6 +120,28 @@ extension UIViewController {
         alertController.addAction(firstAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    
+    func alertThreeButton(title: String,
+                          message: String,
+                          titleActionOne: String,
+                          titleActionTwo: String,
+                          titleCancelAction: String,
+                          style: UIAlertController.Style,
+                          handlerActionOne: @escaping ((UIAlertAction) -> Void),
+                          handlerActionTwo: @escaping ((UIAlertAction) -> Void),
+                          handlerCancel: @escaping ((UIAlertAction) -> Void)) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        let actionOne = UIAlertAction(title: titleActionOne, style: .default, handler: handlerActionOne)
+        let actionTwo = UIAlertAction(title: titleActionTwo, style: .default, handler: handlerActionTwo)
+        let cancelAction = UIAlertAction(title: titleCancelAction, style: .cancel, handler: handlerCancel)
+        
+        alert.addAction(actionOne)
+        alert.addAction(actionTwo)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 

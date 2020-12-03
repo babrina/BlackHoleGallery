@@ -46,11 +46,9 @@ class GalleryViewController: UIViewController {
     
     
     
-    
     @IBAction func processNotification() {
         //        self.label.text = "Notification recieved"
     }
-    
     
     @IBAction func leftButtonPressed(_ sender: UIButton) {
         downIndexPicture()
@@ -86,10 +84,7 @@ class GalleryViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
+
     //MARK: - Func
     func setupPicture() {
         loadPicture()
