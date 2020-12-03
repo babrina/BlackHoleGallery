@@ -5,6 +5,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet var mainView: UIView!
     
     
     var userPincode = ""
@@ -13,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.isHidden = true
-        backgroundImageView.addParalaxEffect()
+        mainView.addParalaxEffect()
         
         loginButton.cornerRadius()
         createButton.cornerRadius()

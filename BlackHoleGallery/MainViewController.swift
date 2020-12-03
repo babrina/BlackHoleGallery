@@ -7,7 +7,6 @@ class MainViewController: UIViewController {
     
     
     var galleryImagesArray: [Picture] = []
-    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +36,17 @@ class MainViewController: UIViewController {
     
     
     private func performImagePicker() {
-        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         self.alertThreeButton(title: "Add photos to secured storage", message: "You can add bank cards, secret photos", titleActionOne: "Camera", titleActionTwo: "Photo library", titleCancelAction: "Cancel", style: .actionSheet) { (_) in
-            self.imagePicker.sourceType = .camera
-            self.present(self.imagePicker, animated: true, completion: nil)
+            imagePicker.sourceType = .camera
+            self.present(imagePicker, animated: true, completion: nil)
             print("Camera selected")
         } handlerActionTwo: { (_) in
-            self.imagePicker.modalPresentationStyle = .overFullScreen
-            self.imagePicker.allowsEditing = true
-            self.imagePicker.sourceType = .photoLibrary
-            self.present(self.imagePicker, animated: true, completion: nil)
+            imagePicker.modalPresentationStyle = .overFullScreen
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
             print("Photo selected")
         } handlerCancel: { (_) in
             self.dismiss(animated: true, completion: nil)

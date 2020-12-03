@@ -91,6 +91,7 @@
                         <outlet property="createButton" destination="M8Z-hg-cog" id="1jH-M6-nXv"/>
                         <outlet property="loginButton" destination="kPX-aU-yPO" id="ujC-t9-Li0"/>
                         <outlet property="loginButtonBottomConstraint" destination="Lhh-N2-fcW" id="BXk-tx-ub8"/>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="CK4-sK-l43"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
