@@ -91,3 +91,8 @@ iOSInjectionProject/
 .DS_Store
 /BlackHoleGallery.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 /BlackHoleGallery.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+/BlackHoleGallery.xcworkspace
+/Podfile
+/Podfile.lock
+/Pods
+/BlackHoleGallery.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings

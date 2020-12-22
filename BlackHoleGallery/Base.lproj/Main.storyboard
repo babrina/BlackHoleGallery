@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nKx-2N-I3c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nKx-2N-I3c">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -275,6 +275,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Fgl-2v-fHc" id="UP4-xd-opD"/>
+                        <outlet property="galleryButtonImage" destination="CSj-QO-2tC" id="jhm-JM-7pb"/>
                         <outlet property="menuView" destination="3pC-Gx-LUa" id="ubU-1d-pKd"/>
                     </connections>
                 </viewController>
@@ -525,13 +526,13 @@
                                         <rect key="frame" x="131.5" y="0.0" width="131" height="47"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-hC-1eT">
-                                                <rect key="frame" x="50" y="11.5" width="31.5" height="24"/>
+                                                <rect key="frame" x="53.5" y="10.5" width="24" height="26"/>
                                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                 <state key="normal">
-                                                    <imageReference key="image" image="camera.on.rectangle.fill" catalog="system" symbolScale="large"/>
+                                                    <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="plusButtonPressed:" destination="czQ-0q-Vdq" eventType="touchUpInside" id="5pd-gj-dNb"/>
+                                                    <action selector="deleteButtonPressed:" destination="mBE-Zg-LZU" eventType="touchUpInside" id="rcB-gz-97E"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -539,11 +540,6 @@
                                             <constraint firstItem="jCL-hC-1eT" firstAttribute="centerY" secondItem="U5a-h9-kQ4" secondAttribute="centerY" id="RMp-x5-v6R"/>
                                             <constraint firstItem="jCL-hC-1eT" firstAttribute="centerX" secondItem="U5a-h9-kQ4" secondAttribute="centerX" id="oOV-4f-KZc"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="jCL-hC-1eT"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tse-Tg-hkS">
                                         <rect key="frame" x="262.5" y="0.0" width="131.5" height="47"/>
@@ -636,6 +632,7 @@
         <image name="liked" width="170.66667175292969" height="170.66667175292969"/>
         <image name="notliked" width="170.66667175292969" height="170.66667175292969"/>
         <image name="photo.on.rectangle.fill" catalog="system" width="128" height="96"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

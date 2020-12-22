@@ -1,5 +1,6 @@
 import UIKit
 import LocalAuthentication
+import SwiftyKeychainKit
 
 
 class ViewController: UIViewController {
@@ -12,7 +13,8 @@ class ViewController: UIViewController {
     
     
     var userPincode = ""
-    
+    let keychain = Keychain(service: "com.swifty.keychain")
+    let accessTokenKey = KeychainKey<String>(key: "accessToken")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,7 @@ class ViewController: UIViewController {
         let context = LAContext()
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {return}
         
-            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Please authenticate to proceed.") { (success, error) in
                 if success {
                     DispatchQueue.main.async {
@@ -54,7 +56,7 @@ class ViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
-        showInputDialog(title: "Enter your password", subtitle: "Password contains at least 6 symbols", actionTitle: "Enter", cancelTitle: "Cancel", inputPlaceholder: "Your number password", inputKeyboardType: .numberPad, cancelHandler: nil) { (input:String?) in
+        showInputDialog(title: "Enter your password", subtitle: "Password contains at least 6 symbols", actionTitle: "Enter", cancelTitle: "Cancel", inputPlaceholder: "Your number password", style: .default, secure: true, inputKeyboardType: .numberPad, cancelHandler: nil) { (input:String?) in
             guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {return}
             if input == self.userPincode {
                 self.navigationController?.pushViewController(controller, animated: true)
@@ -65,11 +67,16 @@ class ViewController: UIViewController {
         
     }
     @IBAction func createNewButtonPressed(_ sender: UIButton) {
-        showInputDialog(title: "Create your password", subtitle: "Password must contain at least 6 symbols", actionTitle: "Set", cancelTitle: "Cancel", inputPlaceholder: "example: 123456", inputKeyboardType: .numberPad, cancelHandler: nil) { (input:String?) in
+        showInputDialog(title: "Create your password", subtitle: "Password must contain at least 6 symbols", actionTitle: "Set", cancelTitle: "Cancel", inputPlaceholder: "example: 123456", style: .default, secure: true, inputKeyboardType: .numberPad, cancelHandler: nil) { (input:String?) in
             
+//            if input?.count < 6 {
+//            
+//            }
             if input!.count >= 6 {
                 self.userPincode = input!
-                UserDefaults.standard.set(self.userPincode, forKey: "pincode")
+                //                UserDefaults.standard.set(self.userPincode, forKey: "pincode")
+                
+                try? self.keychain.set("\(self.userPincode)", for : self.accessTokenKey)
                 
                 UIView.animate(withDuration: 0.3) {
                     self.loginButton.isHidden = false
@@ -100,12 +107,32 @@ class ViewController: UIViewController {
     
     
     func loadDefaults() {
-        guard let password = UserDefaults.standard.object(forKey: "pincode") as? String else {return}
-        self.userPincode = password
-        loginButton.isHidden = false
-        faceIDButton.isHidden = false
-        createButton.isHidden = true
-        self.loginButtonBottomConstraint.constant = 0
+        //        guard let password = UserDefaults.standard.object(forKey: "pincode") as? String else {return}
+        //        self.userPincode = password
+        //        loginButton.isHidden = false
+        //        faceIDButton.isHidden = false
+        //        createButton.isHidden = true
+        //        self.loginButtonBottomConstraint.constant = 0
+        
+        guard let value = try? keychain.get(accessTokenKey) else {return}
+        userPincode = value
+        
+        
+        if value != "nil" {
+            createButton.isHidden = true
+            loginButton.isHidden = false
+            faceIDButton.isHidden = false
+        } else {
+            createButton.isHidden = false
+            loginButton.isHidden = true
+            faceIDButton.isHidden = true
+            
+        }
+        
+        
+        
+        
+        
     }
 }
 
@@ -134,6 +161,8 @@ extension UIViewController {
                          actionTitle:String? = "Add",
                          cancelTitle:String? = "Cancel",
                          inputPlaceholder:String? = nil,
+                         style: UIAlertAction.Style,
+                         secure: Bool,
                          inputKeyboardType:UIKeyboardType = UIKeyboardType.default,
                          cancelHandler: ((UIAlertAction) -> Swift.Void)? = nil,
                          actionHandler: ((_ text: String?) -> Void)? = nil) {
@@ -142,15 +171,19 @@ extension UIViewController {
         alert.addTextField { (textField:UITextField) in
             textField.placeholder = inputPlaceholder
             textField.keyboardType = inputKeyboardType
+            textField.isSecureTextEntry = secure
             
         }
-        alert.addAction(UIAlertAction(title: actionTitle, style: .destructive, handler: { (action:UIAlertAction) in
-            guard let textField =  alert.textFields?.first else {
+        let actionOne = UIAlertAction(title: actionTitle, style: style, handler: { (action:UIAlertAction) in
+            guard let textField = alert.textFields?.first else {
                 actionHandler?(nil)
                 return
             }
             actionHandler?(textField.text)
-        }))
+            
+        })
+        
+        alert.addAction(actionOne)
         alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: cancelHandler))
         
         self.present(alert, animated: true, completion: nil)
@@ -177,6 +210,7 @@ extension UIViewController {
         let actionOne = UIAlertAction(title: titleActionOne, style: .default, handler: handlerActionOne)
         let actionTwo = UIAlertAction(title: titleActionTwo, style: .default, handler: handlerActionTwo)
         let cancelAction = UIAlertAction(title: titleCancelAction, style: .cancel, handler: handlerCancel)
+        
         
         alert.addAction(actionOne)
         alert.addAction(actionTwo)
