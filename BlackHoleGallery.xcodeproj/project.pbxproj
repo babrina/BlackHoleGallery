@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		918EBEC42551575700B55564 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EBEC32551575700B55564 /* MainViewController.swift */; };
 		918EBEC72551634300B55564 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EBEC62551634300B55564 /* Picture.swift */; };
 		918EBECA255167AF00B55564 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EBEC9255167AF00B55564 /* GalleryViewController.swift */; };
+		91BD20442599BED1005815E3 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD20432599BED1005815E3 /* LoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		918EBEC32551575700B55564 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		918EBEC62551634300B55564 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		918EBEC9255167AF00B55564 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		91BD20432599BED1005815E3 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		A902D1FCE002F2D89D31B058 /* Pods-BlackHoleGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackHoleGallery.release.xcconfig"; path = "Target Support Files/Pods-BlackHoleGallery/Pods-BlackHoleGallery.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,22 +103,55 @@
 		918EBEA2255154DA00B55564 /* BlackHoleGallery */ = {
 			isa = PBXGroup;
 			children = (
+				91A3800E2593CAC0003FAA68 /* Model */,
+				91A380102593CC8C003FAA68 /* View */,
+				91A380112593CCAC003FAA68 /* Controller */,
+				91A3800F2593CACE003FAA68 /* Extensions */,
 				9152F0932577898600D8C5C5 /* Fonts */,
-				9152F08D2577807300D8C5C5 /* Cells */,
 				918EBEA3255154DA00B55564 /* AppDelegate.swift */,
-				918EBEA7255154DA00B55564 /* ViewController.swift */,
-				918EBEC32551575700B55564 /* MainViewController.swift */,
-				918EBEC62551634300B55564 /* Picture.swift */,
-				918EBEA9255154DA00B55564 /* Main.storyboard */,
-				918EBEC9255167AF00B55564 /* GalleryViewController.swift */,
-				918A1356255190CB006C1C1A /* AfterOneSecondTextField.swift */,
-				918EBEB92551555100B55564 /* Login.swift */,
-				918EBEC02551570900B55564 /* Extensions.swift */,
 				918EBEAC255154DB00B55564 /* Assets.xcassets */,
-				918EBEAE255154DB00B55564 /* LaunchScreen.storyboard */,
 				918EBEB1255154DB00B55564 /* Info.plist */,
 			);
 			path = BlackHoleGallery;
+			sourceTree = "<group>";
+		};
+		91A3800E2593CAC0003FAA68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				918A1356255190CB006C1C1A /* AfterOneSecondTextField.swift */,
+				918EBEB92551555100B55564 /* Login.swift */,
+				918EBEC62551634300B55564 /* Picture.swift */,
+				91BD20432599BED1005815E3 /* LoginManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91A3800F2593CACE003FAA68 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				918EBEC02551570900B55564 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		91A380102593CC8C003FAA68 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				918EBEAE255154DB00B55564 /* LaunchScreen.storyboard */,
+				918EBEA9255154DA00B55564 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91A380112593CCAC003FAA68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				918EBEA7255154DA00B55564 /* ViewController.swift */,
+				918EBEC32551575700B55564 /* MainViewController.swift */,
+				9152F08D2577807300D8C5C5 /* Cells */,
+				918EBEC9255167AF00B55564 /* GalleryViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D490DDDF20EF7CF30F11894F /* Pods */ = {
@@ -125,7 +160,6 @@
 				79C25BC75E59EFAE201DAF2D /* Pods-BlackHoleGallery.debug.xcconfig */,
 				A902D1FCE002F2D89D31B058 /* Pods-BlackHoleGallery.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -249,6 +283,7 @@
 				918EBEA8255154DA00B55564 /* ViewController.swift in Sources */,
 				918EBEA4255154DA00B55564 /* AppDelegate.swift in Sources */,
 				918EBEC42551575700B55564 /* MainViewController.swift in Sources */,
+				91BD20442599BED1005815E3 /* LoginManager.swift in Sources */,
 				918EBEC72551634300B55564 /* Picture.swift in Sources */,
 				918EBECA255167AF00B55564 /* GalleryViewController.swift in Sources */,
 				918A1357255190CB006C1C1A /* AfterOneSecondTextField.swift in Sources */,

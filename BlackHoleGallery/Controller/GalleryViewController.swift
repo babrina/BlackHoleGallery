@@ -11,7 +11,7 @@ class GalleryViewController: UIViewController {
     //MARK: - VAR
     var photoAlbum: [Picture] = []
     let photoAlbumKey = "saved"
-    var indexPicture = 10
+    var indexPicture = 0
     
     
     override func viewDidLoad() {
@@ -78,6 +78,7 @@ class GalleryViewController: UIViewController {
         imageView.cornerRadius()
         bottomMenu.dropShadow()
     }
+    
     func setupPicture() {
         loadPicture()
         loadComment()
@@ -145,21 +146,4 @@ class GalleryViewController: UIViewController {
             self.indexPicture -= 1
         }
     }
-}
-
-
-
-
-//MARK: - Extensions
-extension GalleryViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ commentField: UITextField) -> Bool {
-        commentField.resignFirstResponder()
-        
-    }
-}
-
-extension Notification.Name {
-    static let buttonPressed = Notification.Name("buttonPressed")
-    static let deletePressed = Notification.Name("deletePressed")
 }
