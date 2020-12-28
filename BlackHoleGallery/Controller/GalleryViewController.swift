@@ -16,40 +16,27 @@ class GalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bottomMenu.cornerRadius()
-        imageView.cornerRadius()
-        bottomMenu.dropShadow()
-        // Load photoalbum custom class
+        setupShadowsAndCorners()
         self.loadPhotoAlbum()
-        
-        // TAP Recognizer
         let removeKeyBoard = UITapGestureRecognizer(target: self, action: #selector(tapRecognized(_:)))
-        
-        // Check if stop writing text
         commentTextView.addTarget(self, action: #selector(GalleryViewController.textFieldDidChange(_:)), for: .editingChanged)
-        // Keyboard notification
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(processNotification), name: Notification.Name.buttonPressed, object: nil)
         registerForKeyboardNotifications()
-        //
-        
-        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupPicture()
         imageView.dropShadow()
-
     }
     
-    
-    
-    @IBAction func processNotification() {
-        //        self.label.text = "Notification recieved"
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        UserDefaults.standard.set(indexPicture, forKey: "index")
+        photoAlbum.remove(at: indexPicture)
+        UserDefaults.standard.set(encodable: photoAlbum, forKey: photoAlbumKey)
+        NotificationCenter.default.post(name: Notification.Name.deletePressed, object: nil, userInfo: nil)
+        self.navigationController?.popViewController(animated: true)
     }
-    
+        
     @IBAction func leftButtonPressed(_ sender: UIButton) {
         downIndexPicture()
         setupPicture()
@@ -58,7 +45,6 @@ class GalleryViewController: UIViewController {
     @IBAction func rightButtonPressed(_ sender: UIButton) {
         upIndexPicture()
         setupPicture()
-        
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -86,6 +72,13 @@ class GalleryViewController: UIViewController {
     
 
     //MARK: - Func
+    
+    func setupShadowsAndCorners() {
+        bottomMenu.cornerRadius()
+        imageView.cornerRadius()
+        bottomMenu.dropShadow()
+    }
+    
     func setupPicture() {
         loadPicture()
         loadComment()
@@ -97,7 +90,6 @@ class GalleryViewController: UIViewController {
             likeButton.isSelected = true
         } else {
             likeButton.isSelected = false
-            
         }
     }
     
@@ -107,12 +99,10 @@ class GalleryViewController: UIViewController {
         }
     }
     
-    
     func loadPicture() {
         if let image = self.loadSave(fileName: self.photoAlbum[self.indexPicture].name) {
             imageView.image = image
         }
-        
     }
     
     func loadPhotoAlbum() {
@@ -121,30 +111,21 @@ class GalleryViewController: UIViewController {
         }
     }
     
-    
     private func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    
-    
     @objc private func keyboardWillShow(_ notification: NSNotification) {
         let userInfo = notification.userInfo!
         let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        
         if notification.name == UIResponder.keyboardWillHideNotification {
-            print("Keyboard dismissed")
             viewButtomConstraint.constant = 0
         } else {
             viewButtomConstraint.constant = keyboardScreenEndFrame.height - 100
-            print("Keyboard shown")
-            
         }
-        
         view.needsUpdateConstraints()
-        
         UIView.animate(withDuration: animationDuration) {
             self.view.layoutIfNeeded()
         }
@@ -165,20 +146,4 @@ class GalleryViewController: UIViewController {
             self.indexPicture -= 1
         }
     }
-}
-
-
-
-
-//MARK: - Extensions
-extension GalleryViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ commentField: UITextField) -> Bool {
-        commentField.resignFirstResponder()
-        
-    }
-}
-
-extension Notification.Name {
-    static let buttonPressed = Notification.Name("buttonPressed")
 }

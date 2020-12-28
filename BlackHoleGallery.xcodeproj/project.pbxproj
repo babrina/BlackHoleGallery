@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01D85B2719AD8565BB27C54F /* Pods_BlackHoleGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196171C70FB282AE95E20723 /* Pods_BlackHoleGallery.framework */; };
 		9152F08F2577808300D8C5C5 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152F08E2577808300D8C5C5 /* CustomCollectionViewCell.swift */; };
 		9152F09725778C0700D8C5C5 /* astro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9152F094257789A100D8C5C5 /* astro.ttf */; };
 		918A1357255190CB006C1C1A /* AfterOneSecondTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918A1356255190CB006C1C1A /* AfterOneSecondTextField.swift */; };
@@ -20,12 +21,14 @@
 		918EBEC42551575700B55564 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EBEC32551575700B55564 /* MainViewController.swift */; };
 		918EBEC72551634300B55564 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EBEC62551634300B55564 /* Picture.swift */; };
 		918EBECA255167AF00B55564 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EBEC9255167AF00B55564 /* GalleryViewController.swift */; };
+		91BD20442599BED1005815E3 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD20432599BED1005815E3 /* LoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		196171C70FB282AE95E20723 /* Pods_BlackHoleGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackHoleGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C25BC75E59EFAE201DAF2D /* Pods-BlackHoleGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackHoleGallery.debug.xcconfig"; path = "Target Support Files/Pods-BlackHoleGallery/Pods-BlackHoleGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		9152F08E2577808300D8C5C5 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		9152F094257789A100D8C5C5 /* astro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = astro.ttf; sourceTree = "<group>"; };
-		9152F095257789A100D8C5C5 /* FontsFree-Net-COSMO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-COSMO.ttf"; sourceTree = "<group>"; };
 		918A1356255190CB006C1C1A /* AfterOneSecondTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterOneSecondTextField.swift; sourceTree = "<group>"; };
 		918EBEA0255154DA00B55564 /* BlackHoleGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackHoleGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		918EBEA3255154DA00B55564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +42,8 @@
 		918EBEC32551575700B55564 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		918EBEC62551634300B55564 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		918EBEC9255167AF00B55564 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		91BD20432599BED1005815E3 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		A902D1FCE002F2D89D31B058 /* Pods-BlackHoleGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackHoleGallery.release.xcconfig"; path = "Target Support Files/Pods-BlackHoleGallery/Pods-BlackHoleGallery.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,12 +51,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D85B2719AD8565BB27C54F /* Pods_BlackHoleGallery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89C3D3E7BE55E8A35704AC4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				196171C70FB282AE95E20723 /* Pods_BlackHoleGallery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9152F08D2577807300D8C5C5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				9152F094257789A100D8C5C5 /* astro.ttf */,
-				9152F095257789A100D8C5C5 /* FontsFree-Net-COSMO.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -74,6 +87,8 @@
 			children = (
 				918EBEA2255154DA00B55564 /* BlackHoleGallery */,
 				918EBEA1255154DA00B55564 /* Products */,
+				D490DDDF20EF7CF30F11894F /* Pods */,
+				89C3D3E7BE55E8A35704AC4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,22 +103,64 @@
 		918EBEA2255154DA00B55564 /* BlackHoleGallery */ = {
 			isa = PBXGroup;
 			children = (
+				91A3800E2593CAC0003FAA68 /* Model */,
+				91A380102593CC8C003FAA68 /* View */,
+				91A380112593CCAC003FAA68 /* Controller */,
+				91A3800F2593CACE003FAA68 /* Extensions */,
 				9152F0932577898600D8C5C5 /* Fonts */,
-				9152F08D2577807300D8C5C5 /* Cells */,
 				918EBEA3255154DA00B55564 /* AppDelegate.swift */,
-				918EBEA7255154DA00B55564 /* ViewController.swift */,
-				918EBEC32551575700B55564 /* MainViewController.swift */,
-				918EBEC62551634300B55564 /* Picture.swift */,
-				918EBEA9255154DA00B55564 /* Main.storyboard */,
-				918EBEC9255167AF00B55564 /* GalleryViewController.swift */,
-				918A1356255190CB006C1C1A /* AfterOneSecondTextField.swift */,
-				918EBEB92551555100B55564 /* Login.swift */,
-				918EBEC02551570900B55564 /* Extensions.swift */,
 				918EBEAC255154DB00B55564 /* Assets.xcassets */,
-				918EBEAE255154DB00B55564 /* LaunchScreen.storyboard */,
 				918EBEB1255154DB00B55564 /* Info.plist */,
 			);
 			path = BlackHoleGallery;
+			sourceTree = "<group>";
+		};
+		91A3800E2593CAC0003FAA68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				918A1356255190CB006C1C1A /* AfterOneSecondTextField.swift */,
+				918EBEB92551555100B55564 /* Login.swift */,
+				918EBEC62551634300B55564 /* Picture.swift */,
+				91BD20432599BED1005815E3 /* LoginManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91A3800F2593CACE003FAA68 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				918EBEC02551570900B55564 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		91A380102593CC8C003FAA68 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				918EBEAE255154DB00B55564 /* LaunchScreen.storyboard */,
+				918EBEA9255154DA00B55564 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91A380112593CCAC003FAA68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				918EBEA7255154DA00B55564 /* ViewController.swift */,
+				918EBEC32551575700B55564 /* MainViewController.swift */,
+				9152F08D2577807300D8C5C5 /* Cells */,
+				918EBEC9255167AF00B55564 /* GalleryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D490DDDF20EF7CF30F11894F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79C25BC75E59EFAE201DAF2D /* Pods-BlackHoleGallery.debug.xcconfig */,
+				A902D1FCE002F2D89D31B058 /* Pods-BlackHoleGallery.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 918EBEB4255154DB00B55564 /* Build configuration list for PBXNativeTarget "BlackHoleGallery" */;
 			buildPhases = (
+				4E9408D652CAB2058F039ED3 /* [CP] Check Pods Manifest.lock */,
 				918EBE9C255154DA00B55564 /* Sources */,
 				918EBE9D255154DA00B55564 /* Frameworks */,
 				918EBE9E255154DA00B55564 /* Resources */,
+				22EB1AED995BC0629B58C40F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +231,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22EB1AED995BC0629B58C40F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlackHoleGallery/Pods-BlackHoleGallery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlackHoleGallery/Pods-BlackHoleGallery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlackHoleGallery/Pods-BlackHoleGallery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E9408D652CAB2058F039ED3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlackHoleGallery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		918EBE9C255154DA00B55564 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -182,6 +283,7 @@
 				918EBEA8255154DA00B55564 /* ViewController.swift in Sources */,
 				918EBEA4255154DA00B55564 /* AppDelegate.swift in Sources */,
 				918EBEC42551575700B55564 /* MainViewController.swift in Sources */,
+				91BD20442599BED1005815E3 /* LoginManager.swift in Sources */,
 				918EBEC72551634300B55564 /* Picture.swift in Sources */,
 				918EBECA255167AF00B55564 /* GalleryViewController.swift in Sources */,
 				918A1357255190CB006C1C1A /* AfterOneSecondTextField.swift in Sources */,
@@ -329,10 +431,12 @@
 		};
 		918EBEB5255154DB00B55564 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79C25BC75E59EFAE201DAF2D /* Pods-BlackHoleGallery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = X2J5K4ATY6;
 				INFOPLIST_FILE = BlackHoleGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -342,16 +446,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AndreyZamiralov.BlackHoleGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		918EBEB6255154DB00B55564 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A902D1FCE002F2D89D31B058 /* Pods-BlackHoleGallery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = X2J5K4ATY6;
 				INFOPLIST_FILE = BlackHoleGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -361,7 +467,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AndreyZamiralov.BlackHoleGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
