@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 class Login: Codable {
+ 
     var name: String
     var pincode: Int
 

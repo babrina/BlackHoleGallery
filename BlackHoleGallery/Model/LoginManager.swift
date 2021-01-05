@@ -14,17 +14,4 @@ class LoginManager {
         }
         return false
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
 }

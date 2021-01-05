@@ -2,8 +2,6 @@ import Foundation
 import UIKit
 
 extension UserDefaults {
-    
-    
     func set<T: Encodable>(encodable: T, forKey key: String) {
         if let data = try? JSONEncoder().encode(encodable) {
             set(data, forKey: key)
@@ -17,7 +15,6 @@ extension UserDefaults {
         return nil
     }
 }
-
 
 extension UIView {
     func cornerRadius(_ radius: Int = 20) {
@@ -54,20 +51,22 @@ extension UIViewController {
             textField.placeholder = inputPlaceholder
             textField.keyboardType = inputKeyboardType
             textField.isSecureTextEntry = secure
+            let actionOne = UIAlertAction(title: actionTitle, style: style, handler: { (action:UIAlertAction) in
+                guard let textField = alert.textFields?.first else {
+                    actionHandler?(nil)
+                    return
+                }
+                actionHandler?(textField.text)
+            })
+            NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: OperationQueue.main, using: {_ in                                            let textCount = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines).count ?? 0
+                let textIsNotEmpty = textCount >= 6
+                actionOne.isEnabled = textIsNotEmpty
+})
+            alert.addAction(actionOne)
+            actionOne.isEnabled = false
             
         }
-        let actionOne = UIAlertAction(title: actionTitle, style: style, handler: { (action:UIAlertAction) in
-            guard let textField = alert.textFields?.first else {
-                actionHandler?(nil)
-                return
-            }
-            actionHandler?(textField.text)
-            
-        })
-        
-        alert.addAction(actionOne)
         alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: cancelHandler))
-        
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -77,7 +76,6 @@ extension UIViewController {
         alertController.addAction(firstAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
     
     func alertThreeButton(title: String,
                           message: String,
@@ -92,16 +90,12 @@ extension UIViewController {
         let actionOne = UIAlertAction(title: titleActionOne, style: .default, handler: handlerActionOne)
         let actionTwo = UIAlertAction(title: titleActionTwo, style: .default, handler: handlerActionTwo)
         let cancelAction = UIAlertAction(title: titleCancelAction, style: .cancel, handler: handlerCancel)
-        
-        
         alert.addAction(actionOne)
         alert.addAction(actionTwo)
         alert.addAction(cancelAction)
-        
         self.present(alert, animated: true, completion: nil)
     }
 }
-
 
 extension UIView {
     func addParalaxEffect(amount: Int = 20) {
@@ -170,7 +164,7 @@ extension MainViewController : UIImagePickerControllerDelegate, UINavigationCont
         picker.dismiss(animated: true, completion: nil)
     }
     func savePickedImage(_ image: UIImage) {
-        guard let name = self.saveImage(image: image) else {return}
+        guard let name = self.saveImage(image: image) else { return }
         let picture = Picture(name)
         let indexPath = IndexPath(item: self.galleryImagesArray.count, section: 0)
         self.galleryImagesArray.append(picture)
@@ -214,6 +208,33 @@ extension GalleryViewController: UITextFieldDelegate {
     
     internal func textFieldShouldReturn(_ commentField: UITextField) -> Bool {
         commentField.resignFirstResponder()
-        
+    }
+}
+
+extension UIImageView {
+    func enableZoom() {
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(startZooming(_:)))
+        isUserInteractionEnabled = true
+        addGestureRecognizer(pinchGesture)
+    }
+    
+    @objc
+    private func startZooming(_ sender: UIPinchGestureRecognizer) {
+        let scaleResult = sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale)
+        guard let scale = scaleResult, scale.a > 1, scale.d > 1 else { return }
+        sender.view?.transform = scale
+        sender.scale = 1
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

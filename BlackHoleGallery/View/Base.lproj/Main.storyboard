@@ -321,12 +321,24 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-VY-pf0">
                                                 <rect key="frame" x="0.0" y="73" width="414" height="723"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cll-dB-Ul1">
-                                                        <rect key="frame" x="30" y="0.0" width="354" height="603"/>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ui6-wX-0mz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="603"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cll-dB-Ul1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="616"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="603" id="uyo-ef-t0P"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cll-dB-Ul1" secondAttribute="trailing" id="4Ku-tU-bT4"/>
+                                                            <constraint firstItem="cll-dB-Ul1" firstAttribute="top" secondItem="Ui6-wX-0mz" secondAttribute="top" id="O1j-FC-bBj"/>
+                                                            <constraint firstItem="cll-dB-Ul1" firstAttribute="width" secondItem="Ui6-wX-0mz" secondAttribute="width" id="TcZ-Ve-sqR"/>
+                                                            <constraint firstItem="cll-dB-Ul1" firstAttribute="height" secondItem="Ui6-wX-0mz" secondAttribute="height" multiplier="1.02156" id="XfK-Hn-vGr"/>
+                                                            <constraint firstItem="cll-dB-Ul1" firstAttribute="leading" secondItem="Ui6-wX-0mz" secondAttribute="leading" id="oe4-3J-tPD"/>
+                                                            <constraint firstAttribute="bottom" secondItem="cll-dB-Ul1" secondAttribute="bottom" id="scH-tX-ebD"/>
                                                         </constraints>
-                                                    </imageView>
+                                                    </scrollView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VnD-hT-7Fq">
                                                         <rect key="frame" x="339" y="0.0" width="60" height="60"/>
                                                         <constraints>
@@ -358,19 +370,18 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="cll-dB-Ul1" firstAttribute="top" secondItem="5fC-VY-pf0" secondAttribute="top" id="3cE-hr-6e7"/>
-                                                    <constraint firstItem="cll-dB-Ul1" firstAttribute="leading" secondItem="5fC-VY-pf0" secondAttribute="leading" constant="30" id="G2f-G5-yrF"/>
+                                                    <constraint firstItem="Ui6-wX-0mz" firstAttribute="leading" secondItem="5fC-VY-pf0" secondAttribute="leading" id="BLG-Fj-fvZ"/>
                                                     <constraint firstItem="VnD-hT-7Fq" firstAttribute="top" secondItem="5fC-VY-pf0" secondAttribute="top" id="Ilz-rW-hSX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ui6-wX-0mz" secondAttribute="trailing" id="Jxj-of-DpG"/>
                                                     <constraint firstAttribute="bottom" secondItem="JvO-Gs-g1T" secondAttribute="bottom" constant="30" id="L8E-62-Y6c"/>
                                                     <constraint firstItem="JvO-Gs-g1T" firstAttribute="leading" secondItem="5fC-VY-pf0" secondAttribute="leading" constant="30" id="XJB-qU-oJ4"/>
                                                     <constraint firstAttribute="trailing" secondItem="JvO-Gs-g1T" secondAttribute="trailing" constant="30" id="bVz-Yr-e29"/>
-                                                    <constraint firstItem="JvO-Gs-g1T" firstAttribute="top" secondItem="cll-dB-Ul1" secondAttribute="bottom" constant="30" id="ce5-96-dGS"/>
                                                     <constraint firstAttribute="trailing" secondItem="VnD-hT-7Fq" secondAttribute="trailing" constant="15" id="fNM-am-M5N"/>
+                                                    <constraint firstItem="Ui6-wX-0mz" firstAttribute="top" secondItem="5fC-VY-pf0" secondAttribute="top" id="fkf-Ej-dPQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="HEz-xt-2lo" secondAttribute="trailing" constant="10" id="gAh-Ar-9C7"/>
-                                                    <constraint firstAttribute="trailing" secondItem="cll-dB-Ul1" secondAttribute="trailing" constant="30" id="vxD-3k-GKI"/>
                                                     <constraint firstItem="HEz-xt-2lo" firstAttribute="top" secondItem="5fC-VY-pf0" secondAttribute="top" id="xhT-yk-6pe"/>
+                                                    <constraint firstItem="JvO-Gs-g1T" firstAttribute="top" secondItem="Ui6-wX-0mz" secondAttribute="bottom" constant="30" id="z5a-V6-37I"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="subviews">
@@ -498,6 +509,7 @@
                                     <constraint firstAttribute="bottom" secondItem="f9H-Ne-Y55" secondAttribute="bottom" id="jZX-fV-0n9"/>
                                     <constraint firstAttribute="trailing" secondItem="f9H-Ne-Y55" secondAttribute="trailing" id="r7n-dg-73V"/>
                                     <constraint firstItem="f9H-Ne-Y55" firstAttribute="leading" secondItem="01z-hx-xRS" secondAttribute="leading" id="vxk-O9-kYn"/>
+                                    <constraint firstItem="Ui6-wX-0mz" firstAttribute="width" secondItem="01z-hx-xRS" secondAttribute="width" id="zTV-pe-QnY"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNo-fo-qxh">
@@ -600,6 +612,7 @@
                         <outlet property="imageView" destination="cll-dB-Ul1" id="cc7-um-aBp"/>
                         <outlet property="likeButton" destination="HEz-xt-2lo" id="uCv-KK-wa6"/>
                         <outlet property="likeImageView" destination="VnD-hT-7Fq" id="SX5-D5-bYG"/>
+                        <outlet property="scrollView" destination="Ui6-wX-0mz" id="htJ-wL-LHy"/>
                         <outlet property="viewButtomConstraint" destination="t5a-Ha-EyV" id="QiT-zq-2df"/>
                     </connections>
                 </viewController>

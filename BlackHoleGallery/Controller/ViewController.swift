@@ -10,19 +10,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var faceIDButton: UIButton!
-    //MARK: - VAR/LET
     
-    var userPincode = ""
+    //MARK: - VAR/LET
+        var userPincode = ""
     let keychain = Keychain(service: "com.swifty.keychain")
     let accessTokenKey = KeychainKey<String>(key: "accessToken")
-    //MARK: - Lifecycle
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpController()
     }
     //MARK: - Actions
-    
     @IBAction func useBiometrics(sender: UIButton) {
         let context = LAContext()
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {return}
@@ -54,8 +53,9 @@ class ViewController: UIViewController {
     
     @IBAction func createNewButtonPressed(_ sender: UIButton) {
         showInputDialog(title: "Create your password", subtitle: "Password must contain at least 6 symbols", actionTitle: "Set", cancelTitle: "Cancel", inputPlaceholder: "example: 123456", style: .default, secure: true, inputKeyboardType: .numberPad, cancelHandler: nil) { (input:String?) in
-            if input!.count >= 6 {
-                self.userPincode = input!
+            guard let text = input else { return }
+            if text.count >= 6 {
+                self.userPincode = text
                 try? self.keychain.set("\(self.userPincode)", for : self.accessTokenKey)
                 UIView.animate(withDuration: 0.3) {
                     self.loginButton.isHidden = false
