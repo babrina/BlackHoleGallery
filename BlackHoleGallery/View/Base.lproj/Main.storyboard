@@ -321,7 +321,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-VY-pf0">
                                                 <rect key="frame" x="0.0" y="73" width="414" height="723"/>
                                                 <subviews>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ui6-wX-0mz">
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ui6-wX-0mz" customClass="ImageScrollView" customModule="ImageScrollView">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="603"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cll-dB-Ul1">
@@ -338,6 +338,11 @@
                                                             <constraint firstItem="cll-dB-Ul1" firstAttribute="leading" secondItem="Ui6-wX-0mz" secondAttribute="leading" id="oe4-3J-tPD"/>
                                                             <constraint firstAttribute="bottom" secondItem="cll-dB-Ul1" secondAttribute="bottom" id="scH-tX-ebD"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="subviews">
+                                                                <exclude reference="cll-dB-Ul1"/>
+                                                            </mask>
+                                                        </variation>
                                                     </scrollView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VnD-hT-7Fq">
                                                         <rect key="frame" x="339" y="0.0" width="60" height="60"/>

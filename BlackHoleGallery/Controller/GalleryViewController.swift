@@ -1,4 +1,5 @@
 import UIKit
+import ImageScrollView
 
 class GalleryViewController: UIViewController {
     @IBOutlet weak var viewButtomConstraint: NSLayoutConstraint!
@@ -7,7 +8,7 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var likeImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var bottomMenu: UIView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollView: ImageScrollView!
     
     //MARK: - VAR
     var photoAlbum: [Picture] = []
@@ -22,8 +23,8 @@ class GalleryViewController: UIViewController {
         let removeKeyBoard = UITapGestureRecognizer(target: self, action: #selector(tapRecognized(_:)))
         commentTextView.addTarget(self, action: #selector(GalleryViewController.textFieldDidChange(_:)), for: .editingChanged)
         registerForKeyboardNotifications()
-//        imageView.enableZoom()
         self.hideKeyboardWhenTappedAround()
+        scrollView.setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,7 +103,9 @@ class GalleryViewController: UIViewController {
     
     func loadPicture() {
         if let image = self.loadSave(fileName: self.photoAlbum[self.indexPicture].name) {
-            imageView.image = image
+            scrollView.display(image: image)
+
+//            imageView.image = image
         }
     }
     
